@@ -149,14 +149,16 @@ The fine-tuned model should be downloaded automatically from huggingface. Howeve
 
 ### 5. [Company Evaluation: Meta-Data & Classifier Predictions](https://github.com/amrayach/Quality_and_usability_SDG_project/blob/main/5_company_scoring_meta_predictions.py)
 
-The first evaluation script joins the weights (sdg-prediction per sentence-count ratio) with the metadata (CO2 Emission per Million Euros Revenue t CO2e / m EUR ratio) 
-
-The code makes use of the metadata in order to calculate a new Score. 
-The new Score is a results from a previous score and a punish/reward to it.
+The first evaluation script joins the weights (sdg-prediction per sentence-count ratio) with the metadata (CO2 Emission per Million Euros Revenue t CO2e / m EUR ratio). The meta data is used as punish/reward weights for the number of sdg-predicted sentences out of all sentences. 
+The final result is saved as a csv file which is updated in the cloud storage.
 
 ### 6. [Company Evaluation: SDG Keywords](https://github.com/amrayach/Quality_and_usability_SDG_project/blob/main/6_company_scoring_keywords.py)
 
-This code takes the results from the keyword model and calculate a score for each company. 
+The second evaluation script calculates the number of detracted SDG keywords per company divided by the number of tokens per document. This is done like this since the detection is done on a document level counter to the model predictions which are done on a sentence level. 
+
+
+**All scores are normalized to a defined scale and updated in the cloud storage accordingly. The final combined score of all the metrics is averaged out over 3 in the Excel sheet for now and not in any script.**
+
 
 ---
 
@@ -164,7 +166,22 @@ This code takes the results from the keyword model and calculate a score for eac
 From the beginning of the project our team created, curated and maintained a [Google Drive Storage](https://drive.google.com/drive/folders/1dCsQ7AagV2ro7ef8tgKzj_4JtVNX4kx7?usp=sharing) to keep all the resources and results in one place.
 The storage contains the following resources:
 
+#### - [Collection of Excel sheets](https://drive.google.com/drive/folders/101NOzs2huQVX_Zd1f-ouKYrxxXqiHi0T?usp=sharing)
+The collective excel file contains the following sheets:
 
+- Company List / Description
+- Company Classifications (Goods/Services)
+- Prediction Scores
+- SDG Keyword Scores
+- Company Locations
+- Dataset Labels Distributions
+
+
+#### - [Scraped Sustainability company Reports](https://drive.google.com/drive/folders/1Efw45XYDIlTVNVKLki0uzqIYDsTNGDhs?usp=sharing)
+#### - [Extracted Text files from the Sustainability company Reports](https://drive.google.com/drive/folders/1ikwsKktc8Oc_RwHk45lH70sD72dMYO_b?usp=sharing)
+#### - [Sustainability Reports Model Predictions](https://drive.google.com/drive/folders/1Efw45XYDIlTVNVKLki0uzqIYDsTNGDhs?usp=sharing)
+#### - [SDG Keywords](https://drive.google.com/file/d/10C9WuTF0MdAQslRYT1qoBWuIqtQbXtFd/view?usp=sharing)
+#### - [Milestones: Powerpoint presentations](https://drive.google.com/drive/folders/1P2XFNmkU9ZQ85IagdfuME-eER42PgsNL?usp=sharing)
 
 ---
 
