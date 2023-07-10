@@ -1,0 +1,19 @@
+The given code performs the following tasks:
+
+1. It imports necessary libraries including `fitz` for PDF processing, `os` for file operations, `pandas` for data manipulation, `spacy` for natural language processing, and `re` for regular expressions.
+
+2. The code loads Spacy's large English NLP model "en_core_web_lg" and disables pipeline components that are not needed for sentence segmentation to improve processing speed.
+
+3. It defines the input and output paths for the PDF files to be processed and the text files to be generated.
+
+4. It checks if the output folder for text files exists and creates it if not.
+
+5. It iterates through the PDF files in the input folder. For each PDF file:
+   - It opens the PDF file with `fitz` and extracts the text per page.
+   - It performs processing steps such as splitting the text after line breaks, stripping whitespace, and removing sentences shorter than two tokens.
+   - It converts the processed list of sentences to a pandas DataFrame, removes empty rows and duplicate sentences.
+   - It converts the list of sentences to a long text string and applies Spacy's NLP pipeline to extract sentences using the sentence recognizer model.
+   - It applies additional processing steps to filter out short sentences.
+   - It saves the extracted sentences as a text file with the same filename but different extension in the output folder.
+
+In summary, the code reads PDF files from the input folder, processes them to extract sentences, and saves the extracted sentences as text files in the output folder. It utilizes libraries like `fitz` for PDF processing and `spacy` for NLP tasks.

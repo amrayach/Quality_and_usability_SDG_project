@@ -1,0 +1,26 @@
+The given code performs the following tasks:
+
+1. It imports the necessary libraries such as Pandas for data manipulation, Matplotlib's pyplot for data visualization, and various modules from scikit-learn for machine learning tasks.
+
+2. The code defines a function called `convert_dataset_flair_format` which converts the datasets to a specific format compatible with the "flair" library. It checks the type of dataset being used, drops unnecessary columns, renames and preprocesses columns, and returns the converted dataset as a Pandas DataFrame.
+
+3. Another function called `create_kfold_stratified_splits` is defined to create stratified k-fold splits for the data. It converts labels to a specific format, initializes a stratified k-fold object with 5 splits, and splits the data into train, dev, and test sets. It also prints the label distribution for each set and saves the splits as CSV files.
+
+4. The main logic is encapsulated in the `main` function. It takes a list of dataset filenames as input. Inside this function:
+   - An empty list is created to store converted DataFrames.
+   - A 2x2 subplot figure is created for visualizing the label distribution of each dataset.
+   - The code iterates over the dataset filenames and performs the following steps:
+     - Calls the `convert_dataset_flair_format` function to convert the dataset to the desired format.
+     - Visualizes the label distribution as a bar plot in the respective subplot of the figure.
+     - Appends the converted DataFrame to the list.
+   - The layout of the subplots is adjusted, and unnecessary elements are removed.
+   - The label distribution of the merged DataFrame is plotted.
+   - The `create_kfold_stratified_splits` function is called with the merged DataFrame, and the splits are saved as CSV files.
+
+5. Finally, the code checks if it is being executed as the main program. If so, it performs the following steps:
+   - Defines a list of dataset filenames.
+   - Checks if the "Data" directory exists and creates it if not.
+   - Checks if each dataset file exists in the "Data" directory and downloads them if missing.
+   - Calls the `main` function with the dataset filenames.
+
+In summary, the code imports required libraries, defines functions for dataset conversion and stratified k-fold splitting, performs data analysis, visualization, and saves the splits. The main function orchestrates the entire process.

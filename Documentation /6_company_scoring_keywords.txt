@@ -1,0 +1,13 @@
+The provided code performs the following tasks:
+
+- It loads the keyword results from a previously generated pickle file named "keyword_result_per_sus_report.pickle" using the `pickle.load()` function. The loaded object is stored in the variable `loaded_obj`.
+- It creates an empty dictionary named `data` with three keys: 'Name', 'Score', and 'Normalized Score'.
+- It iterates over each report in `loaded_obj` and extracts the report name, weights of each SDG keyword, and the number of tokens.
+- For each report, it calculates a score by summing the weights of SDG keywords and dividing it by the number of tokens.
+- The calculated score is added to the 'Score' key in the `data` dictionary.
+- It calculates the minimum and maximum scores from the 'Score' values in `data`.
+- It normalizes the scores in the 'Score' list to a scale of 0-10 using min-max normalization and adds the normalized scores to the 'Normalized Score' key in the `data` dictionary.
+- It creates a pandas DataFrame (`df`) from the `data` dictionary.
+- It writes the DataFrame to a CSV file named "company_score_keywords.csv" using the `to_csv()` function, excluding the index column.
+
+In summary, the code loads keyword results from a pickle file, calculates scores based on the weighted occurrences of SDG keywords, normalizes the scores, and saves the results to a CSV file. The CSV file contains the report names, scores, and normalized scores for further analysis.

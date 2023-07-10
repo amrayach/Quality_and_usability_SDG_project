@@ -1,0 +1,25 @@
+The provided code performs the following tasks:
+
+1) Calculate keyword occurrences:
+- It loads keywords from an Excel file ("UoA-SDG-Keyword-List-Ver.-1.1.xlsx") obtained from the University of Auckland.
+- It creates a list of keywords for SDG 17 since the Excel file doesn't contain them.
+- It initializes a keywords map to store keywords for each SDG.
+- It iterates through the rows of the Excel file and adds keywords to the keywords map.
+- It calculates weights for each SDG based on the distribution of keywords.
+- It iterates through text files in the "Sustainability_Reports_TXT" folder.
+- It reads each text file and counts the occurrences of keywords for each SDG.
+- It multiplies the occurrences of each keyword by its corresponding weight.
+- It saves the results in a pickle file named "keyword_result_per_sus_report.pickle".
+
+2) Calculate sentence classifications:
+- It checks if the model file ("final-model.pt") is already downloaded. If not, it downloads it from the Hugging Face model hub.
+- It loads the Flair TextClassifier model from the downloaded file.
+- It defines the input directory containing the extracted text files of the sustainability reports ("Sustainability_Reports_TXT").
+- It defines the output directory for storing the sentence classifications for each sustainability report ("Sustainability_model_predictions").
+- It iterates through the text files in the input directory.
+- It reads each text file and splits it into sentences.
+- It iterates through the sentences and classifies them using the loaded model.
+- It creates a list of sentence predictions, where each prediction consists of the sentence text and the predicted SDG label.
+- It saves the sentence predictions as CSV files in the output directory, with each text file having a corresponding CSV file.
+
+In summary, the code calculates keyword occurrences for each SDG in the sustainability reports and saves the results in a pickle file. It also performs sentence-level classification using the Flair model and saves the predictions as CSV files.

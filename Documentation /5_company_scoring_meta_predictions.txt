@@ -1,0 +1,17 @@
+The provided code performs the following tasks:
+
+- It reads two sheets from an Excel file named "Company Info.xlsx": "Company ListDescription" into a DataFrame called `desc` and "Predictions" into a DataFrame called `pred`.
+- It duplicates the "Average Score" column from the prediction sheet (`pred`) to the description sheet (`desc`), adding a new column named "Prediction Score" to `desc`.
+- It groups the companies in `desc` based on the "Company Type 0 - Goods / 1  - Services" column, creating separate DataFrames for goods companies (`goods`) and services companies (`serv`).
+- It calculates the average emissions per million euros independently for goods companies (`meanG`) and services companies (`meanS`).
+- It calculates the deviation of emissions per million euros for goods companies and services companies from their respective means and adds new columns "Deviation" to `goods` and `serv`.
+- It determines the minimum and maximum deviation values for goods companies (`deviation_minG`, `deviation_maxG`) and services companies (`deviation_minS`, `deviation_maxS`).
+- It normalizes the deviation values for goods companies and services companies to be between -1 and 1, storing the normalized values in new columns "Normalized Deviation" in `goods` and `serv`.
+- It assigns weights (`weightG`, `weightS`) to control the impact of the deviation on the final score calculation.
+- It calculates the final score for each company in `goods` and `serv` based on the previous score (Average Score) and the normalized deviation, using a formula that rewards or punishes the score based on the deviation. The calculation involves multiplying the deviation by its absolute value and the weight, and subtracting the result from the prediction score. The final scores are stored in new columns "Final Score" in `goods` and `serv`.
+- It concatenates `goods` and `serv` into a single DataFrame called `concatenated`.
+- It resets the index of `concatenated`.
+- It sorts `concatenated` based on the "Company Name" column in ascending order.
+- It writes the results to a new Excel file named "company_score_meta_data_prediction_results.xlsx", excluding the index column.
+
+In summary, the code processes data from two sheets of an Excel file, performs calculations and manipulations on the data, and generates a new Excel file containing the final scores and metadata for goods and services companies.
