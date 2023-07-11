@@ -191,11 +191,11 @@ The collective excel file contains the following sheets:
 - [Charlott Frederike Jakob](c.jakob@tu-berlin.de)
 - [Salar Mohtaj](salar.mohtaj@tu-berlin.de)
 
-### Students: (some emails are missing)
-- [Ammer Ayach]()
-- [Pere Joan Fullana Mora]()
-- [Bela Kristof Katschinski]()
-- [Hadhemi Mejri]()
+### Students: 
+- [Ammer Ayach](ammer.ayach@campus.tu-berlin.de)
+- [Pere Joan Fullana Mora](p.fullana.mora@campus.tu-berlin.de)
+- [Bela Kristof Katschinski](b.katschinski@campus.tu-berlin.de)
+- [Hadhemi Mejri](hadhemi.mejri@campus.tu-berlin.de)
 - [Thi Ngoc Anh Do](thi.na.do@campus.tu-berlin.de)
 - [Blanka Karolina Bogucka](blanka.bogucka@campus.tu-berlin.de)
 
